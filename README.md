@@ -77,3 +77,27 @@ final int Function(int x, int y) nativeAdd =
     child: Text('1 + 2 == ${nativeAdd(1, 2)}'),
   ),
 ```
+
+## Using plugin in a Flutter project
+플러그인을 publish하지 않은 상태에서 Flutter project에 사용하기 위한 방법입니다.
+1. 플러그인 폴더를 복사해 Flutter project에 붙여넣기  
+```
+native_add/
+sampleapp/
+├───android/
+├───ios/
+├───lib/
+├───...
+├───pubspec.yaml
+```
+
+2. `pubspec.yaml`에 플러그인 path 추가
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  native_add:
+    path: ../native_add
+```
+
+3. 함수 호출
