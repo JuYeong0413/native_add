@@ -50,8 +50,8 @@ android {
 }
 ```
 
-6. FFI library를 이용해 C++ 코드 로딩하기  
-* native code를 다루기 위한 `DynamicLibrary` 생성: `lib/native_add.dart`에 코드 추가  
+6. FFI library를 이용해 C++ 코드 로딩하기: native code를 다루기 위한 `DynamicLibrary` 생성  
+`lib/native_add.dart`에 아래 코드를 추가합니다.  
 ```dart
 import 'dart:ffi'; // For FFI
 import 'dart:io'; // For Platform.isX
@@ -60,7 +60,7 @@ final DynamicLibrary nativeAddLib = Platform.isAndroid
     ? DynamicLibrary.open("libnative_add.so")
     : DynamicLibrary.process();
 ```
-Android와 iOS 차이가 있어 플랫폼을 분리해서 생성해야 합니다. (Android는 앞서 `CMakeLists.txt`에서 지정한 `native_add`라는 이름 앞에 접두어 `lib`가 붙은 `.so` 파일을 참조함)  
+Android와 iOS 차이가 있어 플랫폼을 분리해서 생성해야 합니다. (Android는 앞서 `CMakeLists.txt`에서 지정한 `native_add`라는 이름 앞에 접두어 `lib`가 붙은 `.so` 파일을 참조)  
 
 ```dart
 final int Function(int x, int y) nativeAdd =
