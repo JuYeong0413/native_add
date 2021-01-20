@@ -60,7 +60,7 @@ final DynamicLibrary nativeAddLib = Platform.isAndroid
     ? DynamicLibrary.open("libnative_add.so")
     : DynamicLibrary.process();
 ```
-Android와 iOS 차이가 있어 플랫폼을 분리해서 생성해야 한다. (Android는 앞서 `CMakeLists.txt`에서 지정한 `native_add`라는 이름 앞에 접두어 `lib`가 붙은 `.so` 파일을 참조함)  
+Android와 iOS 차이가 있어 플랫폼을 분리해서 생성해야 합니다. (Android는 앞서 `CMakeLists.txt`에서 지정한 `native_add`라는 이름 앞에 접두어 `lib`가 붙은 `.so` 파일을 참조함)  
 
 ```dart
 final int Function(int x, int y) nativeAdd =
@@ -68,7 +68,7 @@ final int Function(int x, int y) nativeAdd =
     .lookup<NativeFunction<Int32 Function(Int32, Int32)>>("native_add")
     .asFunction();
 ```
-위에서 생성한 `DynamicLibrary`인 `nativeAddLib`에서 `nativeAdd`라는 변수에 `native_add`라는 이름을 가진 `Int32` 타입의 변수 두 개를 받고 반환형은 `Int32`인 값을 함수로 할당하겠다는 의미
+위에서 생성한 `DynamicLibrary`인 `nativeAddLib`에서 `nativeAdd`라는 변수에 `native_add`라는 이름을 가진 `Int32` 타입의 변수 두 개를 받고 반환형은 `Int32`인 값을 함수로 할당하겠다는 의미입니다.
 
 7. 함수 호출(예시 파일: `example/lib/main.dart`)  
 ```dart
