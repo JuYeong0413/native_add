@@ -80,7 +80,7 @@ final int Function(int x, int y) nativeAdd =
 
 ## Using plugin in a Flutter project
 플러그인을 publish하지 않은 상태에서 Flutter project에 사용하기 위한 방법입니다.
-1. 플러그인 폴더를 복사해 Flutter project에 붙여넣기  
+1. 플러그인 폴더를 Flutter project와 동일한 디렉토리에 두기  
 ```
 native_add/
 sampleapp/
